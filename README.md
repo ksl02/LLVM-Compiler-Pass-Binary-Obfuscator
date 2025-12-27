@@ -1,3 +1,7 @@
+# Overview
+
+This project explores compiler-based code hardening techniques that aim to raise the cost of unauthorized tampering and patching and study how modern decompilers recover control flow. The intended applications include IP protection for proprietary software and client side integrity checks in anti-cheat and anti-tamper systems.
+
 # Bogus Control Flow
 
 The bogus control flow pass adds false execution paths to functions through if-then instructions evaluating opaque predicates. These execution paths are unreachable and contain random dead instructions that do not affect the output of the program. Each path will split itself a random number of times, creating a tree-like structure which diverge from the true execution paths. Then, this false execution path connects back to a random block of the true execution path, resembling a legitimate execution path.
@@ -604,6 +608,6 @@ LABEL_30:
 
 Note that the `printf("Global value %d\n", globalCheck0x1000);` is from the user-defined integrity validator function (I left it unimplemented, so all it does now is check what the guard variable is).
 
-Also note that a decompiler would have much more difficulty on functions that aren't as simple as balance_signs. Therefore, these techniques should be even more successful on real software.
+Also note that a decompiler would have much more difficulty on functions that aren't as simple as balance_signs, so these techniques should be even more successful on real software.
 
 Alone, these methods won't stop a strong reverse engineer. However, when combined with other security techniques (see [ARM Segment Encryption Decryption](https://github.com/ksl02/Runtime-ARM-Segment-Encryption-Decryption), [Control Flow Flattener](https://github.com/ksl02/LLVM-Compiler-Pass-Control-Flow-Flattening), [.rodata Encrypt/Decrypt](https://github.com/ksl02/rodata-segment-encrypt-decrypt)), they can meaningfully increase reverse-engineering effort and reduce the reliability of static analysis.
