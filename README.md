@@ -1,6 +1,6 @@
 # Overview
 
-This project explores compiler-based code hardening techniques that aim to raise the cost of unauthorized tampering and patching and study how modern decompilers recover control flow. The intended applications include IP protection for proprietary software and client side integrity checks in anti-cheat and anti-tamper systems.
+This project explores compiler-based code hardening techniques that aim to raise the cost of unauthorized tampering and patching and study how modern decompilers recover control flow. The intended applications include IP protection for proprietary software and client side integrity checks in anti-cheat and anti-tamper systems. Originally developed in 2023, published in 2025 for portfolio.
 
 # Bogus Control Flow
 
